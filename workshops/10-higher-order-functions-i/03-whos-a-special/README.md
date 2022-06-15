@@ -6,20 +6,34 @@ Feel free to add your own special pets to the array!
 
 Use .forEach in your answer.
 
-
 ```javascript
-let specialPets = [{
-    name: 'Sadie',
-    species: 'cat'
-  }, {
-    name: 'Layla',
-    species: 'cat'
-  }, {
-    name: 'Bogie',
-    species: 'dog'
-  }
+let specialPets = [
+  {
+    name: "Sadie",
+    species: "cat",
+  },
+  {
+    name: "Layla",
+    species: "cat",
+  },
+  {
+    name: "Bogie",
+    species: "dog",
+  },
 ];
 
 whosASpecial(specialPets);
 // => Sadie the cat is very special! Layla the cat is very special! Bogie the dog is very special!
 ```
+
+function whosASpecial(specialPets) {
+let results = [];
+
+specialPets.forEach(pushStringOntoResults);
+
+function pushStringOntoResults(petObject) {
+results.push(`${petObject.name} the ${petObject.species} is very special!`);
+}
+
+return results.join(' ');
+}
